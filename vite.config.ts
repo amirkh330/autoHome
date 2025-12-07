@@ -13,9 +13,9 @@ export default defineConfig({
       registerType: "autoUpdate",
       includeAssets: ["favicon.svg", "robots.txt", "icons/*.png"],
       manifest: {
-        name: "اتوپین سرویس",
+        name: "autoHome سرویس",
         short_name: "AutoPin",
-        description: "سرویس آنلاین اتوپین",
+        description: "سرویس آنلاین autoHome",
         theme_color: "#3FBD6E",
         background_color: "#ffffff",
         display: "standalone",

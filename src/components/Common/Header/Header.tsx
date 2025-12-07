@@ -35,8 +35,8 @@ export const Header = () => {
       </Flex>
 
       <Flex m="0" alignItems="center" gap="2">
-        <Text>اتوپین</Text>
-        <Image src={Logo} h="25px" opacity={0.9} mx="0" />
+        <Text>اتوهوم</Text>
+        <Image src={Logo} h="50px"  mx="0" />
       </Flex>
 
       {/* <Login isOpen={isOpen} onOpen={onOpen} onClose={onClose} /> */}

@@ -13,13 +13,16 @@ export const RouteConst = {
   services: "/services",
   contactUs: "/contact-us",
 
-  shopReports: "/shop/reports",
-  shopCustomers: "/shop/customers",
-  shopDashboard: "/shop/dashboard",
-  shopCreateOrder: "/shop/create-order",
+  manageReports: "/manage/reports",
+  manageApartments: "/manage/apartments",
+  manageDashboard: "/manage/dashboard",
+  manageNotifications: "/manage/notifications",
+  manageCreateFactor: "/manage/create-factor",
 
-  customerReports: "/user/reports",
-  customerDashboard: "/user/dashboard",
+  userReports: "/user/reports",
+  userDashboard: "/user/dashboard",
+  userFound: "/user/found",
+  userCharges: "/user/charges",
 
   notFound: "*",
 };

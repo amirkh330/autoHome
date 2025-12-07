@@ -11,13 +11,13 @@ export const customTheme = extendTheme({
   },
   colors: {
     amir: {
-      mainBg: "#d5dadf",
-      secondaryBg: "#e7eaefff",
-      primary: "#3FBD6E",
-      secondary: "#6E7685",
-      secondaryVariant: "#777b82",
-      common: "#1A1A1A",
-      accent: "#3FBD6E",
+      mainBg: "#F3F4F6", // سفید-خاکستری نرم و مدرن
+      secondaryBg: "#FFFFFF", // کاملاً تمیز برای کارت و دیالوگ
+      primary: "#3A86FF", // آبی مدرن UI (CTA)
+      secondary: "#6C727F", // خاکستری تایپوگرافی حرفه‌ای
+      secondaryVariant: "#9AA0A9", // برای متن‌های کم‌اهمیت، لیبل‌ها
+      text: "#1A1A1A", // مشکی خوانا
+      accent: "#3A86FF",
     },
   },
   components: {

@@ -28,7 +28,7 @@ export const months = [
 ];
 
 export enum RoleEnum {
-  CUSTOMER = "customer",
   ADMIN = "admin",
-  SHOP = "shop",
+  MANAGER = "MANAGER",
+  USER = "USER",
 }

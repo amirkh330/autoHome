@@ -1,25 +1,28 @@
 import { NotFound } from "@/components/Common/Notfound/NotFound";
-import { CustomerDashboard } from "@/Pages/[customer]/customerDashboard/customerDashboard";
-import { CustomerReports } from "@/Pages/[customer]/customerReports/customerReports";
-import { ShopCreateOrder } from "@/Pages/[shop]/shopCreateOrder/shopCreateOrder";
-import { ShopCustomers } from "@/Pages/[shop]/shopCustomers/shopCustomers";
-import { ShopDashboard } from "@/Pages/[shop]/shopDashboard/shopDashboard";
-import { ShopReports } from "@/Pages/[shop]/shopReport/shopReport";
-import Home from "@/Pages/home/home";
-import { LoginPage } from "@/Pages/login/login";
-import { Register } from "@/Pages/regester/register";
-import useAuthStore from "@/store/authStore";
-import { RoleEnum } from "@/utils/common";
-import { Navigate, RouteObject } from "react-router-dom";
-import { RouteConst } from "@/utils/allRoutes.type";
-import ContactUs from "@/Pages/contactUs/contactUs";
-import Services from "@/Pages/services/services";
-import { AdminLogin } from "@/Pages/[admin]/adminLogin/adminLogin";
 import { AdminDashboard } from "@/Pages/[admin]/adminDashboard/adminDashboard";
+import { AdminLogin } from "@/Pages/[admin]/adminLogin/adminLogin";
+import { AdminPeriod } from "@/Pages/[admin]/adminPeriods/adminPeriods";
 import { AdminServices } from "@/Pages/[admin]/adminServices/adminServices";
 import { AdminUsers } from "@/Pages/[admin]/adminUsers/adminUsers";
 import { AdminVehicles } from "@/Pages/[admin]/adminVehicles/adminVehicles";
-import { AdminPeriod } from "@/Pages/[admin]/adminPeriods/adminPeriods";
+import { ManagerApartments } from "@/Pages/[manager]/managerApartments/managerApartments";
+import { ManagerCreateFactor } from "@/Pages/[manager]/managerCreateFactor/managerCreateFactor";
+import { ManagerDashboard } from "@/Pages/[manager]/managerDashboard/managerDashboard";
+import { ManagerNotification } from "@/Pages/[manager]/managerNotification/managerNotification";
+import { ManagerReports } from "@/Pages/[manager]/managerReports/managerReports";
+import { UserCharges } from "@/Pages/[user]/userCharges/userCharges";
+import { UserDashboard } from "@/Pages/[user]/userDashboard/userDashboard";
+import { UserFound } from "@/Pages/[user]/userFound/userFound";
+import { UserReports } from "@/Pages/[user]/userReports/userReports";
+import ContactUs from "@/Pages/contactUs/contactUs";
+import Home from "@/Pages/home/home";
+import { LoginPage } from "@/Pages/login/login";
+import { Register } from "@/Pages/regester/register";
+import Services from "@/Pages/services/services";
+import useAuthStore from "@/store/authStore";
+import { RouteConst } from "@/utils/allRoutes.type";
+import { RoleEnum } from "@/utils/common";
+import { Navigate, RouteObject } from "react-router-dom";
 
 const PrivateRoute = ({
   element,
@@ -81,49 +84,76 @@ export const allRoutes: Array<RouteObject> = [
     ),
   },
 
-  // Customer //
+  // MANAGER //
   {
-    path: RouteConst.customerDashboard,
+    path: RouteConst.manageApartments,
     element: (
       <PrivateRoute
-        element={<CustomerDashboard />}
-        acceptRole={RoleEnum.CUSTOMER}
+        element={<ManagerApartments />}
+        acceptRole={RoleEnum.MANAGER}
       />
     ),
   },
   {
-    path: RouteConst.customerReports,
+    path: RouteConst.manageCreateFactor,
     element: (
       <PrivateRoute
-        element={<CustomerReports />}
-        acceptRole={RoleEnum.CUSTOMER}
+        element={<ManagerCreateFactor />}
+        acceptRole={RoleEnum.MANAGER}
+      />
+    ),
+  },
+  {
+    path: RouteConst.manageDashboard,
+    element: (
+      <PrivateRoute
+        element={<ManagerDashboard />}
+        acceptRole={RoleEnum.MANAGER}
+      />
+    ),
+  },
+  {
+    path: RouteConst.manageReports,
+    element: (
+      <PrivateRoute
+        element={<ManagerReports />}
+        acceptRole={RoleEnum.MANAGER}
+      />
+    ),
+  },
+  {
+    path: RouteConst.manageNotifications,
+    element: (
+      <PrivateRoute
+        element={<ManagerNotification />}
+        acceptRole={RoleEnum.MANAGER}
       />
     ),
   },
 
-  // SHOP //
+  // USER //
   {
-    path: RouteConst.shopDashboard,
+    path: RouteConst.userCharges,
     element: (
-      <PrivateRoute element={<ShopDashboard />} acceptRole={RoleEnum.SHOP} />
+      <PrivateRoute element={<UserCharges />} acceptRole={RoleEnum.USER} />
     ),
   },
   {
-    path: RouteConst.shopCreateOrder,
+    path: RouteConst.userDashboard,
     element: (
-      <PrivateRoute element={<ShopCreateOrder />} acceptRole={RoleEnum.SHOP} />
+      <PrivateRoute element={<UserDashboard />} acceptRole={RoleEnum.USER} />
     ),
   },
   {
-    path: RouteConst.shopReports,
+    path: RouteConst.userFound,
     element: (
-      <PrivateRoute element={<ShopReports />} acceptRole={RoleEnum.SHOP} />
+      <PrivateRoute element={<UserFound />} acceptRole={RoleEnum.USER} />
     ),
   },
   {
-    path: RouteConst.shopCustomers,
+    path: RouteConst.userReports,
     element: (
-      <PrivateRoute element={<ShopCustomers />} acceptRole={RoleEnum.SHOP} />
+      <PrivateRoute element={<UserReports />} acceptRole={RoleEnum.USER} />
     ),
   },
 ];

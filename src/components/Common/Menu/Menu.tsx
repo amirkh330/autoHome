@@ -17,6 +17,7 @@ import { List } from "@phosphor-icons/react";
 import { Link, useNavigate } from "react-router-dom";
 import { Login } from "../Login/Login";
 import { RouteConst } from "@/utils/allRoutes.type";
+import { RoleEnum } from "@/utils/common";
 
 const Menu = () => {
   const navigate = useNavigate();
@@ -30,9 +31,9 @@ const Menu = () => {
   } = useDisclosure();
 
   const menuItems = isAuth
-    ? role === "customer"
-      ? [..._CustomerMenu, ..._PublicMenu]
-      : [..._ShopMenu, ..._PublicMenu]
+    ? role === RoleEnum.MANAGER
+      ? [..._ManagerMenu, ..._PublicMenu]
+      : [..._UserMenu, ..._PublicMenu]
     : _PublicMenu;
   return (
     <>
@@ -50,7 +51,7 @@ const Menu = () => {
             {/* <DrawerCloseButton /> */}
             <Icon mx="0" as={CloseButton} onClick={onClose} />
             <Text fontSize={"18px"} fontWeight={600}>
-              اتوپین
+              اتوهوم
             </Text>
           </Flex>
 
@@ -139,17 +140,19 @@ const Menu = () => {
 
 export default Menu;
 
-const _CustomerMenu = [
-  { title: "داشبورد", link: RouteConst.customerDashboard },
-  { title: "سوابق سفارش", link: RouteConst.customerReports },
+const _ManagerMenu = [
+  { title: "ساختمان من", link: RouteConst.manageApartments },
+  { title: "ایجاد فاکتور", link: RouteConst.manageCreateFactor },
+  { title: "داشبورد", link: RouteConst.manageDashboard },
+  { title: "اعلانات", link: RouteConst.manageNotifications },
+  { title: "آمار", link: RouteConst.manageReports },
 ];
 
-const _ShopMenu = [
-  { title: "داشبورد", link: RouteConst.shopDashboard },
-  { title: "خدمات ما", link: RouteConst.services },
-  { title: "آمار", link: RouteConst.shopReports },
-  { title: "ایجاد رسید", link: RouteConst.shopCreateOrder },
-  { title: "مشتریان من", link: RouteConst.shopCustomers },
+const _UserMenu = [
+  { title: "داشبورد", link: RouteConst.userDashboard },
+  { title: "شارژ ساختمان", link: RouteConst.userCharges },
+  { title: "صندوق", link: RouteConst.userFound },
+  { title: "آمار", link: RouteConst.userReports },
 ];
 
 const _PublicMenu = [{ title: "تماس با ما", link: RouteConst.contactUs }];

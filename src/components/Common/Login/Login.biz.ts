@@ -1,6 +1,6 @@
 import useAuthStore from "@/store/authStore";
 import { RouteConst } from "@/utils/allRoutes.type";
-import { BaseURL } from "@/utils/common";
+import { BaseURL, RoleEnum } from "@/utils/common";
 import { useToast } from "@chakra-ui/react";
 import axios from "axios";
 import { useState } from "react";
@@ -81,8 +81,8 @@ export const useLogin = (onClose: () => void) => {
           ...(shopName && { shopName }),
         });
         onClose();
-        if (role === "customer") return navigate(RouteConst.customerDashboard);
-        navigate(RouteConst.shopDashboard);
+        if (role === RoleEnum.MANAGER) return navigate(RouteConst.manageDashboard);
+        navigate(RouteConst.userDashboard);
       })
       .catch((err) => {
         console.log(err);

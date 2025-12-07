@@ -2,7 +2,12 @@ import useAuthStore from "@/store/authStore";
 import { RouteConst } from "@/utils/allRoutes.type";
 import { RoleEnum } from "@/utils/common";
 import { Box, Flex, Text } from "@chakra-ui/react";
-import { UserCircleCheck, UserCircleGear } from "@phosphor-icons/react";
+import {
+  ContactlessPayment,
+  PlugCharging,
+  UserCircleCheck,
+  UserCircleGear,
+} from "@phosphor-icons/react";
 import {
   HouseLine,
   Phone,
@@ -17,9 +22,9 @@ export const Footer = () => {
   const { isAuth, role } = useAuthStore();
   const list = !isAuth
     ? commonList
-    : role == RoleEnum.CUSTOMER
-    ? customerList
-    : shopList;
+    : role == RoleEnum.MANAGER
+    ? managerList
+    : userList;
   return (
     <Flex
       bg="amir.secondaryBg"
@@ -64,13 +69,17 @@ const commonList = [
   },
 ];
 
-const customerList = [
+const managerList = [
   {
     icon: <UserCircleCheck size="20" />,
     text: "داشبورد",
-    url: RouteConst.customerDashboard,
+    url: RouteConst.manageDashboard,
   },
-  { icon: <HouseLine size="20" />, text: "خانه", url: RouteConst.home },
+  {
+    icon: <ContactlessPayment size="20" />,
+    text: "ایجاد فاکتور",
+    url: RouteConst.manageCreateFactor,
+  },
   {
     icon: <Phone size="20" />,
     text: "ارتباط با ما",
@@ -78,16 +87,16 @@ const customerList = [
   },
 ];
 
-const shopList = [
+const userList = [
   {
     icon: <UserCircleGear size="20" />,
     text: "داشبورد",
-    url: RouteConst.shopDashboard,
+    url: RouteConst.userDashboard,
   },
   {
-    icon: <Wrench size="20" />,
-    text: "ایجاد سرویس",
-    url: RouteConst.shopCreateOrder,
+    icon: <PlugCharging size="20" />,
+    text: "شارژ ساختمان",
+    url: RouteConst.userCharges,
   },
   {
     icon: <Phone size="20" />,

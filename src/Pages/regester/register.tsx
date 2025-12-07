@@ -33,11 +33,10 @@ export const Register = () => {
       py="6"
     >
       <Text fontSize="22px" fontWeight="bold" mb="6" color="amir.primary">
-        ثبت‌نام مغازه‌دار
+        ثبت نام مدیر ساختمان
       </Text>
       <Text mt="3" fontSize="15px" mb="6">
-        شما بعد از ثبت نام موفق به مغازه‌داری خود وارد شوید و از تمام امکانات
-        سایت استفاده کنید
+        شما بعد از ثبت نام می‌توانید به مدیریت ساختمان دسترسی داشته باشید.
       </Text>
 
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -85,24 +84,24 @@ export const Register = () => {
             <FormErrorMessage>{errors.phoneNumber?.message}</FormErrorMessage>
           </FormControl>
 
-          {/* اسم مغازه */}
-          <FormControl isInvalid={!!errors.shopName}>
-            <FormLabel>اسم مغازه</FormLabel>
+          {/* اسم ساختمان */}
+          <FormControl isInvalid={!!errors.apartmentName}>
+            <FormLabel>اسم ساختمان</FormLabel>
             <Input
-              {...register("shopName")}
-              placeholder="اسم مغازه"
+              {...register("apartmentName")}
+              placeholder="اسم ساختمان"
               bg="amir.secondaryBg"
               border="1px solid #555"
             />
-            <FormErrorMessage>{errors.shopName?.message}</FormErrorMessage>
+            <FormErrorMessage>{errors.apartmentName?.message}</FormErrorMessage>
           </FormControl>
 
-          {/* آدرس مغازه */}
+          {/* آدرس ساختمان */}
           <FormControl isInvalid={!!errors.address}>
-            <FormLabel>آدرس مغازه</FormLabel>
+            <FormLabel>آدرس ساختمان</FormLabel>
             <Textarea
               {...register("address")}
-              placeholder="آدرس کامل مغازه"
+              placeholder="آدرس کامل ساختمان"
               bg="amir.secondaryBg"
               border="1px solid #555"
             />
@@ -110,7 +109,7 @@ export const Register = () => {
           </FormControl>
 
           <FormControl isInvalid={!!errors.location}>
-            <FormLabel>موقعیت مغازه</FormLabel>
+            <FormLabel>موقعیت ساختمان</FormLabel>
             <Map setNewPin={(e) => setValue("location", e as any)} />
             {errors.location?.lat || errors.location?.lng ? (
               <FormErrorMessage>

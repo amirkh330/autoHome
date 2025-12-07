@@ -14,9 +14,9 @@ export default defineConfig({
       includeAssets: ["favicon.svg", "robots.txt", "icons/*.png"],
       manifest: {
         name: "autoHome سرویس",
-        short_name: "AutoPin",
+        short_name: "AutoHome",
         description: "سرویس آنلاین autoHome",
-        theme_color: "#3FBD6E",
+        theme_color: "#3A86FF",
         background_color: "#ffffff",
         display: "standalone",
         start_url: "/",

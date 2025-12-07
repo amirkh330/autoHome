@@ -1,6 +1,5 @@
 import { Login } from "@/components/Common/Login/Login";
 import Carousel from "@/components/CoreComponents/Carousel/Carousel";
-import Logo from "@/images/logo.png";
 import {
   Box,
   Button,
@@ -14,9 +13,6 @@ import {
 import { Bell, File, Toolbox } from "@phosphor-icons/react";
 import { motion } from "framer-motion";
 import intro from "public/images/intro.png";
-import c1 from "public/images/co-1.png";
-import c2 from "public/images/co-2.png";
-import c3 from "public/images/co-3.png";
 
 const MotionBox = motion(Box);
 const MotionFlex = motion(Flex);
@@ -39,57 +35,34 @@ export default function Home() {
         <Image src={intro} h="300px" />
 
         <Text fontSize="26px" fontWeight="700" mt="2" color="amir.common">
-          مدیریت سرویس‌ها با یک لمس
+          مدیریت هزینه‌های ساختمان با یک لمس
         </Text>
 
         <Text fontSize="15px" color="amir.secondary" mt="2" maxW="320px">
-          با ما مدیریت سرویس‌های خودروی شما را به صورت آنلاین انجام دهید.
+          با ما مدیریت هزینه‌های ساختمان شما به صورت آنلاین انجام دهید.
         </Text>
       </MotionFlex>
-
-      {/* FEATURE CARDS STACK */}
-      {/* <VStack spacing="4" mt="10" px="5">
-        <FeatureCard
-          icon={<Bell size={28} />}
-          title="یادآوری هوشمند"
-          desc="یادآوری هوشمند برای سرویس‌های شما."
-        />
-        <FeatureCard
-          icon={<File size={28} />}
-          title="کارتکس دیجیتال"
-          desc="همه سوابق خودرو همیشه همراه شماست."
-        />
-        <FeatureCard
-          icon={<Toolbox size={28} />}
-          title="مخصوص راننده و تعمیرکار"
-          desc="هر دو سمت یک پنل واضح و ساده دارند."
-        />
-      </VStack> */}
-      {/* <Carousel images={[c1, c2, c3]} /> */}
       <Box mx="4" mt="6">
         <Carousel
           items={[
             <FeatureCard
               icon={<Bell size={28} />}
               title="یادآوری هوشمند"
-              desc="یادآوری هوشمند برای سرویس‌های شما."
+              desc="یادآوری هوشمند برای شارژ ساختمان."
             />,
             <FeatureCard
               icon={<File size={28} />}
-              title="کارتکس دیجیتال"
-              desc="همه سوابق خودرو همیشه همراه شماست."
+              title="شفافیت هزینه های مالی"
+              desc=" اطلاعات مالی شارژ ساختمان."
             />,
             <FeatureCard
               icon={<Toolbox size={28} />}
-              title="مخصوص راننده و تعمیرکار"
-              desc="هر دو سمت یک پنل واضح و ساده دارند."
+              title="مخصوص برای مدیران ساختمان"
+              desc="مدیریت هزینه‌های ساختمان به صورت انلاین."
             />,
           ]}
         />
       </Box>
-      {/* <Box mx="4" mt="6">
-        <Carousel images={[intro]} />
-      </Box> */}
 
       <MotionFlex
         mt="auto"
@@ -98,8 +71,6 @@ export default function Home() {
         animate={{ opacity: 1, y: 0 }}
       >
         <Button
-          // as={Link}
-          // to="/login"
           mx="4"
           px="3"
           py="6"

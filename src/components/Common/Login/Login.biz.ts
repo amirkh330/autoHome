@@ -18,6 +18,9 @@ export const useLogin = (onClose: () => void) => {
   const { loginUser } = useAuthStore();
 
   const handleSendOtp = async () => {
+    if (phoneNumber == "09000000000") {
+      return navigate(RouteConst.register + "?phoneNumber=" + phoneNumber);
+    }
     setStep("otp");
     return;
     setLoading(true);
@@ -57,16 +60,19 @@ export const useLogin = (onClose: () => void) => {
     setOtp("");
   };
   const handleVerifyOtp = async () => {
+    const isManager = phoneNumber == "09000000001";
     loginUser({
       accessToken: "data.data.accessToken",
       refresh: "",
-      fullName: "آقا مدیره",
-      role: RoleEnum.MANAGER,
-      phoneNumber: "09385440212",
+      fullName: isManager ? "آقا مدیره" : "مستاجر/مالک",
+      role: isManager ? RoleEnum.MANAGER : RoleEnum.USER,
+      phoneNumber:phoneNumber,
     });
     onClose();
-    return navigate(RouteConst.manageDashboard);
-  
+    return navigate(
+      isManager ? RouteConst.manageDashboard : RouteConst.userDashboard
+    );
+
     return;
     setLoading(true);
     axios

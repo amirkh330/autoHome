@@ -22,7 +22,7 @@ export const RouteConst = {
 
   userReports: "/user/reports",
   userDashboard: "/user/dashboard",
-  userFound: "/user/found",
+  userNotification: "/user/notification",
   userCharges: "/user/charges",
 
   notFound: "*",

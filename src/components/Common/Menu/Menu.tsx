@@ -150,9 +150,8 @@ const _ManagerMenu = [
 
 const _UserMenu = [
   { title: "داشبورد", link: RouteConst.userDashboard },
-  { title: "شارژ ساختمان", link: RouteConst.userCharges },
-  { title: "صندوق", link: RouteConst.userFound },
-  { title: "آمار", link: RouteConst.userReports },
+  { title: "اعلانات", link: RouteConst.userNotification },
+  { title: "مدیریت مالی ساختمان", link: RouteConst.userCharges },
 ];
 
 const _PublicMenu = [{ title: "تماس با ما", link: RouteConst.contactUs }];

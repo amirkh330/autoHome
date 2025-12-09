@@ -12,7 +12,7 @@ import { ManagerNotification } from "@/Pages/[manager]/managerNotification/manag
 import { ManagerReports } from "@/Pages/[manager]/managerReports/managerReports";
 import { UserCharges } from "@/Pages/[user]/userCharges/userCharges";
 import { UserDashboard } from "@/Pages/[user]/userDashboard/userDashboard";
-import { UserFound } from "@/Pages/[user]/userFound/userFound";
+import { UserNotification } from "@/Pages/[user]/userNotification/userNotification";
 import { UserReports } from "@/Pages/[user]/userReports/userReports";
 import ContactUs from "@/Pages/contactUs/contactUs";
 import Home from "@/Pages/home/home";
@@ -154,9 +154,9 @@ export const allRoutes: Array<RouteObject> = [
     ),
   },
   {
-    path: RouteConst.userFound,
+    path: RouteConst.userNotification,
     element: (
-      <PrivateRoute element={<UserFound />} acceptRole={RoleEnum.USER} />
+      <PrivateRoute element={<UserNotification />} acceptRole={RoleEnum.USER} />
     ),
   },
   {

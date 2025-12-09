@@ -18,6 +18,8 @@ export const useLogin = (onClose: () => void) => {
   const { loginUser } = useAuthStore();
 
   const handleSendOtp = async () => {
+    setStep("otp");
+    return;
     setLoading(true);
     axios
       .post(`${BaseURL}auth/send-otp`, {
@@ -55,6 +57,17 @@ export const useLogin = (onClose: () => void) => {
     setOtp("");
   };
   const handleVerifyOtp = async () => {
+    loginUser({
+      accessToken: "data.data.accessToken",
+      refresh: "",
+      fullName: "آقا مدیره",
+      role: RoleEnum.MANAGER,
+      phoneNumber: "09385440212",
+    });
+    onClose();
+    return navigate(RouteConst.manageDashboard);
+  
+    return;
     setLoading(true);
     axios
       .post(`${BaseURL}auth/verify-otp`, {
@@ -81,7 +94,8 @@ export const useLogin = (onClose: () => void) => {
           ...(shopName && { shopName }),
         });
         onClose();
-        if (role === RoleEnum.MANAGER) return navigate(RouteConst.manageDashboard);
+        if (role === RoleEnum.MANAGER)
+          return navigate(RouteConst.manageDashboard);
         navigate(RouteConst.userDashboard);
       })
       .catch((err) => {

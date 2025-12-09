@@ -116,13 +116,22 @@ export const allRoutes: Array<RouteObject> = [
     path: RouteConst.manageReports,
     element: (
       <PrivateRoute
-        element={<ManagerReports />}
+        element={<ManagerReports/>}
         acceptRole={RoleEnum.MANAGER}
       />
     ),
   },
   {
     path: RouteConst.manageNotifications,
+    element: (
+      <PrivateRoute
+        element={<ManagerNotification />}
+        acceptRole={RoleEnum.MANAGER}
+      />
+    ),
+  },
+  {
+    path: RouteConst.manageIncome,
     element: (
       <PrivateRoute
         element={<ManagerNotification />}

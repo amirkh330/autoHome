@@ -32,3 +32,16 @@ export enum RoleEnum {
   MANAGER = "MANAGER",
   USER = "USER",
 }
+
+type TPayment = {
+  unitId: number;
+  month: string; // مثل "آذر 1404"
+  amount: number;
+  status: "paid" | "unpaid";
+  receiptNumber?: string;
+};
+
+export type TBuildingBalance = {
+  totalBalance: number; // مثبت یا منفی
+  payments: TPayment[];
+};

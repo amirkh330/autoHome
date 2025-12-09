@@ -16,6 +16,7 @@ export const RouteConst = {
   manageReports: "/manage/reports",
   manageApartments: "/manage/apartments",
   manageDashboard: "/manage/dashboard",
+  manageIncome: "/manage/income",
   manageNotifications: "/manage/notifications",
   manageCreateFactor: "/manage/create-factor",
 
